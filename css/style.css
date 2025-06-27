@@ -1,0 +1,476 @@
+/* style.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to top, rgb(1, 39, 51), rgb(0, 1, 2));
+  color: white;
+  padding-bottom: 50px;
+}
+
+nav.scrolled {
+  background: linear-gradient(to right, #000428, #004e92);
+}
+
+/* Navbar futurista minimalista */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 15px 30px;
+  background: rgba(10, 10, 20, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  border-bottom: 1px solid #0ff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1100;
+}
+
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: #0ff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px #0ff;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.nav-links {
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 30px;
+  background: rgba(5, 5, 15, 0.9);
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px #0ff88a55;
+  min-width: 180px;
+}
+
+.nav-links.show {
+  display: flex;
+}
+
+.nav-links li {
+  margin: 12px 0;
+  position: relative;
+}
+
+.nav-links a {
+  color: #0ff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  
+}
+
+.nav-links a:hover {
+  color: #aaffff;
+  text-shadow: 0 0 8px #aaffff, 0 0 15px #aaffffcc;
+}
+
+.nav-links a:focus,
+.submenu li a:focus {
+  outline: 2px solid #0ff;
+  outline-offset: 2px;
+  
+}
+
+nav li.has-submenu:hover .submenu {
+  display: block;
+  animation: submenuFadeIn 0.3s ease forwards;
+}
+
+nav .submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 100%;
+  background: rgba(5, 5, 15, 0.95);
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  border-radius: 6px;
+  box-shadow: 0 0 15px #0ffbbbaa;
+  min-width: 160px;
+  z-index: 1010;
+}
+
+nav .submenu li a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #0ff;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  
+  border-left: 3px solid transparent;
+}
+
+nav .submenu li a:hover {
+  background-color: rgba(0, 255, 255, 0.125);
+  color: #aaffff;
+  border-left: 3px solid #0ff;
+  text-shadow: 0 0 8px #aaffff, 0 0 12px #aaffffcc;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes submenuFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgb(0, 0, 0), rgb(1, 39, 51));
+  color: white;
+  padding: 10px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+footer.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.carousel-container {
+  max-width: 100%;
+  height: 700px;
+  margin: 70px auto 0;
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+.carousel-wrapper {
+  position: relative;
+  height: 700px;
+  overflow: hidden;
+  perspective: 1500px;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out, box-shadow 0.6s ease-in-out;
+  transform-style: preserve-3d;
+  border-radius: 12px;
+}
+
+.carousel-item.active {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+  border-radius: 12px;
+  z-index: 10;
+}
+
+.carousel-item.active:hover {
+  transform: scale(1.1) rotateY(15deg) translateZ(80px);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-item.active img {
+  border-radius: 12px;
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+  transform-origin: center center;
+  transition: transform 0.6s ease-in-out;
+}
+
+.carousel-item.active:hover img {
+  transform: scale(1.1);
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+  border-radius: 12px;
+  user-select: none;
+}
+
+.carousel-buttons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-buttons.visible {
+  opacity: 1;
+}
+
+.carousel-button {
+  pointer-events: all;
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  width: 60px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: black;
+  box-shadow: 0 0 12px #ff7e00aa;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 20;
+}
+
+.carousel-indicators button {
+  position: relative;
+  border: none;
+  background: #25252588;
+  width: 40px;
+  height: 6px;
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.carousel-indicators button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background: #0b9dff;
+}
+
+.carousel-indicators button.active::before {
+  animation: indicatorTimer 7s linear forwards;
+}
+
+@keyframes indicatorTimer {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.carousel-indicators button.active {
+  background: #333;
+  width: 40px;
+  height: 8px;
+}
+
+.carousel-item p {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  color: white;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.carousel-item.active p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    right: 10px;
+    min-width: 140px;
+    padding: 10px 15px;
+  }
+
+  nav .submenu {
+    min-width: 140px;
+  }
+}
+
+/* Seção de Personagens Paginados */
+.episodios {
+  margin-top: 50px;
+  padding: 2rem;
+  background: rgba(15, 15, 25, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 0 30px #ff7e00aa;
+  color: #fff;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.episodios h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+  color: #ff7e00;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.card {
+  background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+  border-radius: 12px;
+  padding: 0.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 12px rgba(255, 126, 0, 0.25);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(255, 126, 0, 0.5);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+.card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card a:hover p {
+  color: #ff7e00;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff7e00;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination button:hover:not([disabled]) {
+  background-color: #e26a00;
+}
+
+.pagination button[disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pagination .active {
+  background-color: #fff;
+  color: #ff7e00;
+}
+
+/* Animação */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
