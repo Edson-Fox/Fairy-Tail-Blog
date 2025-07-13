@@ -1,49 +1,24 @@
-const personagens = [
-  {
-    nome: "Erza Scarlet",
-    imagem: "FairyTail/assets/img/erza.png",
-    link: "pages/personagens/erza.html",
-    categoria: ["mago", "guilda"]
-  },
-  {
-    nome: "Gray Fullbuster",
-    imagem: "FairyTail/assets/img/gray.png",
-    link: "pages/personagens/gray.html",
-    categoria: ["mago", "guilda"]
-  },
-  {
-    nome: "Lucy Heartfilia",
-    imagem: "FairyTail/assets/img/lucy.png",
-    link: "pages/personagens/lucy.html",
-    categoria: ["mago", "guilda"]
-  },
-  {
-    nome: "Natsu Dragneel",
-    imagem: "FairyTail/assets/img/natsu.png",
-    link: "pages/personagens/natsu.html",
-    categoria: ["mago", "dragao", "guilda"]
-  },
-  {
-    nome: "Zeref Dragneel",
-    imagem: "FairyTail/assets/img/zeref.png",
-    link: "pages/personagens/zeref.html",
-    categoria: ["mago"]
-  }
-];
+// personagens.js
 
-personagens.sort((a, b) => a.nome.localeCompare(b.nome));
-let personagensFiltrados = personagens;
+import { personagens } from './data/personagensData.js';
+
+
 const perPage = 6;
 let currentPage = 1;
+let personagensFiltrados = personagens;
 
-function renderPage(page) {
+export function renderPage(page) {
   const list = document.getElementById('episode-list');
-  list.style.opacity = 0;
+  const semResultados = document.getElementById('sem-resultados');
+  if (!list || !semResultados) return;
 
   const start = (page - 1) * perPage;
   const items = personagensFiltrados.slice(start, start + perPage);
 
-  setTimeout(() => {
+  if (items.length === 0) {
+    list.innerHTML = '';
+    semResultados.style.display = 'block';
+  } else {
     list.innerHTML = items.map(p => `
       <div class="card">
         <a href="${p.link}">
@@ -52,46 +27,31 @@ function renderPage(page) {
         </a>
       </div>
     `).join('');
+    semResultados.style.display = 'none';
+  }
 
-    updatePagination();
-    list.style.opacity = 1;
-  }, 200);
+  updatePagination();
 }
 
-function updatePagination() {
+export function updatePagination() {
   const totalPages = Math.ceil(personagensFiltrados.length / perPage);
+  const pageNumbers = document.getElementById('pageNumbers');
+
   document.getElementById('prevBtn').disabled = currentPage === 1;
   document.getElementById('nextBtn').disabled = currentPage === totalPages;
 
-  const pageNumbers = document.getElementById('pageNumbers');
   pageNumbers.innerHTML = '';
-
   for (let i = 1; i <= totalPages; i++) {
     const btn = document.createElement('button');
     btn.textContent = i;
     if (i === currentPage) btn.classList.add('active');
     btn.onclick = () => {
       currentPage = i;
-      renderPage(i);
+      renderPage(currentPage);
     };
     pageNumbers.appendChild(btn);
   }
 }
-
-document.querySelectorAll('.filtro-btn')?.forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('ativo'));
-    btn.classList.add('ativo');
-
-    const filtro = btn.getAttribute('data-filtro');
-    currentPage = 1;
-    personagensFiltrados = filtro === 'todos'
-      ? personagens
-      : personagens.filter(p => p.categoria.includes(filtro));
-
-    renderPage(currentPage);
-  });
-});
 
 document.getElementById('prevBtn')?.addEventListener('click', () => {
   if (currentPage > 1) {
@@ -108,5 +68,39 @@ document.getElementById('nextBtn')?.addEventListener('click', () => {
   }
 });
 
-// Inicializa
-renderPage(currentPage);
+// Filtro por categoria
+document.querySelectorAll('.filtro-btn')?.forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('ativo'));
+    btn.classList.add('ativo');
+
+    const filtro = btn.getAttribute('data-filtro');
+    currentPage = 1;
+
+    if (filtro === 'todos') {
+      personagensFiltrados = personagens;
+    } else {
+      personagensFiltrados = personagens.filter(p => p.categoria.includes(filtro));
+    }
+
+    renderPage(currentPage);
+  });
+});
+
+// Busca por nome
+const searchInput = document.getElementById('searchInput');
+if (searchInput) {
+  searchInput.addEventListener('input', () => {
+    const termo = searchInput.value.toLowerCase();
+    personagensFiltrados = personagens.filter(p =>
+      p.nome.toLowerCase().includes(termo)
+    );
+    currentPage = 1;
+    renderPage(currentPage);
+  });
+}
+
+// Função de inicialização
+export function iniciarPersonagens() {
+  renderPage(currentPage);
+}

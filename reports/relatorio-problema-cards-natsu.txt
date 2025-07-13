@@ -1,0 +1,58 @@
+
+Relatório Técnico: Problema de Imagens Excedendo os Cards
+
+1. Contexto do Problema
+No projeto da página do Natsu Dragneel, as imagens dentro dos cards de habilidades estavam ultrapassando os limites visuais dos próprios cards. Isso causava um efeito visual indesejado, prejudicando a organização e estética da página.
+
+2. Causas Identificadas
+a) Falta de consistência nas classes CSS
+- Alguns cards especiais, como .modo-rei e .corpo-flamejante, não incluíam a classe base .habilidade-card.
+- Isso impedia que esses cards herdassem regras importantes de layout e contenção presentes na classe .habilidade-card.
+
+b) Imagens sem limitação e centralização
+- As imagens dentro dos cards não tinham restrições adequadas de largura, altura e alinhamento.
+- Ausência de propriedades CSS como max-width, width: 100%, object-fit: cover e margin: 0 auto fazia as imagens extrapolarem os limites do card.
+
+3. Solução Aplicada
+Passo 1: Uniformizar as classes dos cards
+- Adicionamos a classe .habilidade-card a todos os cards, inclusive os especiais (.modo-rei, .corpo-flamejante, .rugido-fogo, etc).
+- Isso garante que todos os cards compartilhem o mesmo layout base, incluindo padding, border, box-shadow e contenção.
+
+Passo 2: Ajustar estilos das imagens
+Aplicamos o seguinte CSS para as imagens dentro dos cards:
+
+.habilidade-card img {
+  display: block;         /* Remove espaços em linha / inline */
+  margin: 0 auto;         /* Centraliza horizontalmente */
+  width: 100%;            /* Limita largura ao container (card) */
+  height: 180px;          /* Altura fixa para uniformidade */
+  object-fit: cover;      /* Mantém proporção e corta o excesso */
+  border-radius: 8px;     /* Bordas arredondadas */
+  box-shadow: 0 0 12px #ff7e00aa; /* Sombra suave */
+}
+
+- object-fit: cover é fundamental para manter a imagem dentro do espaço reservado, evitando distorções e garantindo que a imagem "corte" as partes excedentes de forma elegante.
+- Definir width: 100% e height: 180px força todas as imagens a se ajustarem uniformemente dentro do card.
+
+Passo 3: Revisar o HTML dos cards
+Exemplo de um card corrigido:
+
+<div class="habilidade-card modo-rei" tabindex="0">
+  <h3>🔥👑 Modo Rei Dragão do Fogo</h3>
+  <p>Forma suprema de Natsu...</p>
+  <img src="..." alt="..." />
+</div>
+
+4. Boas Práticas para Evitar Problemas Similares
+- Classes base comuns: Use uma classe base para containers com o mesmo propósito para garantir consistência.
+- Controle de imagens: Sempre limite tamanho e posicionamento de imagens dentro de cards ou containers com regras claras de CSS.
+- Testes responsivos: Verifique como imagens e cards se comportam em diferentes tamanhos de tela.
+- Centralização e alinhamento: margin: 0 auto e display: block são essenciais para centralizar imagens inline.
+- object-fit para imagens: Sempre que precisar que imagens preencham um container com proporção preservada, use object-fit: cover.
+
+5. Conclusão
+A falha principal estava na ausência da classe base .habilidade-card em todos os cards, que causava falha na aplicação de regras CSS cruciais para limitar e posicionar as imagens corretamente.
+
+A correção da estrutura HTML e o ajuste do CSS das imagens resolveram completamente o problema, garantindo que as imagens fiquem centralizadas, limitadas e dentro dos cards, mantendo o design original e uma experiência visual agradável.
+
+

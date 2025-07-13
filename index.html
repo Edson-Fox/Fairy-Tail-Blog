@@ -83,6 +83,10 @@
   <button class="filtro-btn" data-filtro="dragao">Dragon Slayers</button>
   <button class="filtro-btn" data-filtro="guilda">Guilda Fairy Tail</button>
 </div>
+  
+   <div class="search-box">
+  <input type="text" id="searchInput" placeholder="Buscar personagem..." />
+  </div>
 
   <div id="episode-list" class="grid"></div>
   <div class="pagination">
@@ -90,6 +94,10 @@
     <div id="pageNumbers"></div>
     <button id="nextBtn">Próximo »</button>
   </div>
+  <div id="sem-resultados" style="display: none; text-align: center; margin-top: 2rem; font-size: 1.2rem; color: #ccc;">
+  Nenhum personagem encontrado.
+  </div>
+
 </section>
 
   </main>
@@ -98,10 +106,20 @@
     <p>&copy; 2024 Edson. Todos os direitos reservados.</p>
   </footer>
 
-  <script src="js/index.js"></script>
-  <script src="js/carousel.js" defer></script>
-  <script src="js/menu.js" defer></script>
-  <script src="js/personagens.js" defer></script>
+ <script type="module">
+  import { iniciarPersonagens } from './js/personagens.js';
+  iniciarPersonagens();
+</script>
+<script type="module">
+  import { iniciarCarrossel } from './js/carousel.js';
+  iniciarCarrossel();
+</script>
+<script type="module">
+  import { iniciarMenu } from './js/menu.js';
+  iniciarMenu();
+</script>
+
+
 
 </body>
 </html>

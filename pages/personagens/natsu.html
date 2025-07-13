@@ -3,30 +3,126 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Natsu Dragneel - Perfil</title>
-  <link rel="stylesheet" href="../../css/style.css" />
+  <title>Natsu Dragneel - Fairy Tail</title>
+  <link rel="stylesheet" href="../../css/natsu.css" />
 </head>
 <body>
   <header>
-    <nav class="navbar">
-      <a href="../../index.html" class="logo">← Voltar para Início</a>
-    </nav>
+    <h1>Natsu Dragneel</h1>
   </header>
 
-  <main class="personagem-perfil">
-    <div class="perfil-container">
-      <img src="../../assets/img/natsu.png" alt="Natsu Dragneel" class="perfil-img" />
-      <div class="perfil-info">
-        <h1>Natsu Dragneel</h1>
-        <p><strong>Categoria:</strong> Mago de Fogo</p>
-        <p><strong>Guilda:</strong> Fairy Tail</p>
-        <p><strong>Descrição:</strong> Natsu é um Dragon Slayer criado por Igneel. É impulsivo, poderoso e extremamente leal aos seus amigos. Seu objetivo é reencontrar o dragão que o criou.</p>
+  <main>
+    <section class="ficha-tecnica" aria-labelledby="ficha-title">
+      <h2 id="ficha-title">Ficha Técnica</h2>
+      <ul>
+        <li><strong>Nome:</strong> Natsu Dragneel</li>
+        <li><strong>Idade:</strong> 17</li>
+        <li><strong>Magia:</strong> Dragon Slayer do Fogo</li>
+        <li><strong>Guilda:</strong> Fairy Tail</li>
+        <li><strong>Companheiro:</strong> Happy</li>
+      </ul>
+    </section>
+
+    <section class="biografia" aria-labelledby="bio-title">
+      <h2 id="bio-title">Biografia</h2>
+      <p>
+        Natsu é um dos membros mais impulsivos e apaixonados da Fairy Tail. Criado pelo dragão Igneel,
+        ele domina o estilo de magia Dragon Slayer do Fogo, permitindo-lhe consumir e produzir chamas
+        devastadoras...
+      </p>
+      <button id="btn-narrar" aria-label="Ouvir biografia de Natsu Dragneel">Ouvir biografia</button>
+    </section>
+
+   <section class="habilidades" aria-labelledby="habilidades-title">
+  <h2 id="habilidades-title">Habilidades</h2>
+
+  <div class="habilidades-lista">
+
+    <!-- Rugido do Dragão de Fogo -->
+    <div class="habilidade-card rugido-fogo" tabindex="0">
+      <h3>🔥 Rugido do Dragão de Fogo</h3>
+      <p>Natsu cospe uma poderosa rajada de fogo em forma de rugido, varrendo tudo à frente com pura força dracônica.</p>
+      <img src="/assets/img/GIFs/Karyū no Hōkō.gif" alt="GIF da técnica Rugido do Dragão de Fogo" />
+    </div>
+
+    <!-- Chama Relâmpago -->
+    <div class="habilidade-card chama-raio" tabindex="0">
+      <h3>⚡ Chama Relâmpago</h3>
+      <p>Natsu combina seu fogo com eletricidade para causar ataques mais rápidos e intensos.</p>
+      <img src="/assets/img/GIFs/Fire Dragon Lightning Mode.gif" alt="Gif da habilidade Chama Relâmpago" />
+    </div>
+
+    <!-- Modo Rei Dragão do Fogo -->
+    <div class="habilidade-card modo-rei" tabindex="0">
+      <h3>🔥👑 Modo Rei Dragão do Fogo</h3>
+      <p>Forma suprema de Natsu, canalizando o poder de Igneel em um ataque devastador com chamas reais.</p>
+      <img src="/assets/img/GIFs/Modo Rei Dragão do Fogo.gif" alt="GIF ilustrando Modo Rei Dragão do Fogo" />
+    </div>
+
+    <!-- Punho do Dragão de Fogo -->
+    <div class="habilidade-card corpo-flamejante" tabindex="0">
+      <h3>🥊🔥 Punho do Dragão de Fogo</h3>
+      <p>Estilo de luta de Natsu com socos e chutes envoltos em chamas intensas.</p>
+      <img src="/assets/img/GIFs/Fire Dragon's Iron Fist.webp" alt="GIF do Punho do Dragão de Fogo" />
+    </div>
+
+  </div>
+</section>
+
+
+
+    <section class="galeria" aria-labelledby="galeria-title">
+      <h2 id="galeria-title">Galeria</h2>
+      <img class="galeria-img" src="/assets/img/natsu/natsu-happy.png" alt="Natsu em pose amigável com Happy" />
+      <img class="galeria-img" src="/assets/img/natsu/natsu-gray.png" alt="Natsu competindo com Gray" />
+      <img class="galeria-img" src="/assets/img/natsu/guilda-fairy-tail.png" alt="Cenário da guilda Fairy Tail" />
+      <img class="galeria-img" src="/assets/img/natsu/natsu-perfil.png" alt="Imagem de perfil do Natsu" />
+      <img class="galeria-img" src="/assets/img/natsu/natsu-rei-dragao.png" alt="Natsu no modo Rei Dragão do Fogo" />
+    </section>
+
+    <div class="flip-card" role="region" aria-label="Habilidade do Natsu">
+      <div class="flip-card-inner" tabindex="0">
+        <div class="flip-card-front">
+          <p>Habilidade: Fire Dragon Slayer Magic</p>
+        </div>
+        <div class="flip-card-back">
+          <p>Descrição detalhada da habilidade do Natsu.</p>
+        </div>
       </div>
     </div>
   </main>
 
+  <div style="text-align:center;">
+    <a class="btn-voltar" href="../../index.html" aria-label="Voltar para a página inicial">← Voltar</a>
+  </div>
+
+  <div class="fogo-particles" aria-hidden="true"></div>
+
+  <!-- Áudios -->
+  <audio id="narracao-natsu" src="/assets/audio/natsu/natsu-narracao.v01.wav" preload="auto"></audio>
+  <audio id="som-fogo" src="/assets/audio/fire.mp3" preload="auto"></audio>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox hidden">
+    <span class="close" aria-label="Fechar imagem ampliada">&times;</span>
+    <img class="lightbox-img" src="" alt="Imagem ampliada da galeria" />
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    ScrollReveal().reveal('.ficha-tecnica', { delay: 200, origin: 'left', distance: '50px' });
+    ScrollReveal().reveal('.biografia', { delay: 400, origin: 'bottom' });
+    ScrollReveal().reveal('.galeria', { delay: 600, origin: 'right', distance: '50px' });
+  </script>
+
+  <script type="module">
+    import { iniciarNarracaoNatsu } from '../../js/natsu.js';
+    iniciarNarracaoNatsu();
+  </script>
+
   <footer>
-    <p>&copy; 2024 Edson. Todos os direitos reservados.</p>
+    <p>&copy; 2024 Fairy Tail Blog</p>
   </footer>
 </body>
 </html>

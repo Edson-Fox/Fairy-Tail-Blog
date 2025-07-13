@@ -1,0 +1,310 @@
+/* === Estilo Global para Gray Fullbuster === */
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(to bottom, #0f1a2b, #000814); /* Fundo gélido escuro */
+  color: #e0f7ff; /* Azul-claro gelado */
+  cursor: url('/assets/cursors/ice-cursor.png'), auto;
+}
+
+/* Fundo de gelo fixo decorativo */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/img/gray/Gray-Fullbuster Determinado-simple_compose_02.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5;
+  z-index: -1;
+  pointer-events: none;
+}
+
+header, footer {
+  background: #00111f;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #4fc3f7;
+}
+
+h1, h2 {
+  color: #81d4fa;
+  text-shadow: 0 0 10px #4fc3f7;
+}
+
+/* Seções principais com tema de gelo */
+.ficha-tecnica, .biografia, .habilidades, .galeria {
+  margin: 2rem auto;
+  max-width: 900px;
+  padding: 1.5rem;
+  background: rgba(10, 30, 50, 0.7);
+  border: 1px solid #4fc3f7;
+  border-radius: 12px;
+  box-shadow: 0 0 25px #81d4fa88;
+  position: relative;
+  z-index: 1;
+}
+
+.ficha-tecnica ul, .habilidades ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ficha-tecnica li::before, .habilidades li::before {
+  content: "❄️ ";
+  color: #81d4fa;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.galeria h2 {
+  grid-column: 1 / -1; /* Faz o título ocupar toda a linha da grid */
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #81d4fa;
+  text-shadow: 0 0 10px #4fc3f7;
+}
+
+.galeria img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 12px #4fc3f7aa;
+  position: relative;
+  transition: filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.galeria img:hover {
+  filter: brightness(1.1) drop-shadow(0 0 8px #81d4fa);
+  box-shadow: 0 0 15px #81d4fa;
+  animation: neveSuave 2s infinite;
+}
+
+@keyframes neveSuave {
+  0%, 100% { filter: drop-shadow(0 0 8px #81d4fa); }
+  50% { filter: drop-shadow(0 0 15px #b3e5fc); }
+}
+
+/* Botão de voltar estilizado */
+.btn-voltar {
+  background-color: #4fc3f7;
+  color: #00111f;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #4fc3f7aa;
+  padding: 0.7rem 1.5rem;
+  transition: background 0.3s;
+  text-decoration: none;
+}
+
+.btn-voltar:hover {
+  background-color: #29b6f6;
+}
+
+/* Cartão de habilidade com efeito de gelo */
+.habilidade-card {
+  background: linear-gradient(145deg, #0a1a2f, #0f2a4d);
+  border: 2px solid #8fd8ff;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 15px #00ccff44;
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.habilidade-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px #00ccffaa;
+}
+
+.habilidade-card img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 1rem;
+  box-shadow: 0 0 10px #00ccff88;
+}
+
+/* ❄️ Brilho congelante no título */
+.habilidade-card h3 {
+  color: #bdefff;
+  text-shadow: 0 0 5px #66cfff, 0 0 15px #00bfff;
+  animation: geloPulse 2s infinite alternate;
+}
+
+/* ❄️ Partículas de gelo decorativas */
+.habilidade-card::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(circle, #cceeff22 1px, transparent 1px);
+  background-size: 15px 15px;
+  animation: cristais 6s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes geloPulse {
+  from {
+    text-shadow: 0 0 5px #66cfff, 0 0 10px #00bfff;
+  }
+  to {
+    text-shadow: 0 0 15px #bdefff, 0 0 25px #66cfff;
+  }
+}
+
+@keyframes cristais {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-30px) rotate(360deg);
+    opacity: 0.1;
+  }
+}
+
+
+.habilidade-card p {
+  color: #b3e5fc;
+}
+
+/* Animação de brilho gélido */
+.gelo-brilhante {
+  animation: brilhoGelo 2s infinite alternate;
+}
+
+@keyframes brilhoGelo {
+  from {
+    box-shadow: 0 0 8px #4fc3f7aa;
+  }
+  to {
+    box-shadow: 0 0 16px #b3e5fc;
+  }
+}
+
+@media (max-width: 600px) {
+  .habilidade-card img {
+    max-height: 150px;
+  }
+}
+/* Ajustes para dispositivos móveis */
+
+/* === Lightbox === */
+/* Lightbox (imagem ampliada) */
+.lightbox {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: zoom-out;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow:
+    0 0 30px #81d4facc,
+    0 0 50px #4fc3f7aa;
+  transition: transform 0.4s ease;
+}
+
+.lightbox .close {
+  position: fixed;
+  top: 1rem;
+  right: 1.5rem;
+  color: #4fc3f7;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  text-shadow: 0 0 10px #1a4f7f;
+  z-index: 1100;
+  transition: color 0.3s ease;
+}
+
+.lightbox .close:hover {
+  color: #2980b9;
+}
+
+/* Bloqueio de scroll da página ao ativar lightbox */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* === Fim do Lightbox === */
+
+/* Cursor personalizado para toda a página */
+body, .galeria img, .lightbox {
+  cursor: url('../../assets/cursors/ice-cursor.png'), auto;
+}
+
+/* Para fallback e usabilidade, pode usar cursor padrão em mobile */
+@media (hover: none), (pointer: coarse) {
+  body, .galeria img, .lightbox {
+    cursor: auto;
+  }
+}
+.lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox.active .lightbox-img {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.lightbox.closing .lightbox-img {
+  transform: scale(0.8);
+  opacity: 0;
+}
+
+/* Tooltip "Clique para fechar" */
+.lightbox::after {
+  content: "Clique para fechar";
+  position: absolute;
+  bottom: 20px;
+  font-size: 1rem;
+  color: #a0d8ffcc;
+  text-shadow: 0 0 5px #4fc3f7aa;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.lightbox:hover::after {
+  opacity: 1;
+}

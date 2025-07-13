@@ -246,3 +246,17 @@ document.getElementById('nextBtn').onclick = () => {
 
 // Inicializa página
 renderPage(currentPage);
+
+const btnNarrar = document.getElementById('btn-narrar');
+const textoBiografia = `Meu nome é Natsu Dragneel. Eu sou um mago da Fairy Tail e meu poder é o fogo do dragão!`;
+
+btnNarrar.addEventListener('click', () => {
+  const utterance = new SpeechSynthesisUtterance(textoBiografia);
+  utterance.lang = 'pt-BR';
+  speechSynthesis.speak(utterance);
+});
+
+document.querySelector('h1').addEventListener('mouseenter', () => {
+  document.getElementById('som-fogo').play();
+});
+
