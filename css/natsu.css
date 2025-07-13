@@ -1,0 +1,503 @@
+/* === Estilo Global === */
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(to bottom, #300000, #1a0000); /* Fundo em degradê escuro */
+  color: #fff; /* Cor do texto principal */
+}
+
+/* Imagem de fundo decorativa fixa */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(/assets/img/natsu/natsu-bg.png); /* Fundo do personagem */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.8;
+  z-index: -1; /* Atrás de todo o conteúdo */
+  pointer-events: none; /* Não interfere na interação */
+}
+
+/* Cabeçalho e rodapé estilizados */
+header, footer {
+  background: #1a0000;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #ff4500; /* Destaque em laranja */
+}
+
+/* Títulos com brilho */
+h1, h2 {
+  color: #ff7e00;
+  text-shadow: 0 0 8px #ff4500; /* Brilho laranja */
+}
+
+/* === Seções principais === */
+.ficha-tecnica, .biografia, .habilidades, .galeria {
+  margin: 2rem auto;
+  max-width: 900px;
+  padding: 1.5rem;
+  background: rgba(50, 0, 0, 0.6); /* Fundo semi-transparente escuro */
+  border: 1px solid #ff4500;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #ff450088;
+  position: relative;
+  z-index: 1;
+}
+
+/* Listas de ficha técnica e habilidades */
+.ficha-tecnica ul, .habilidades ul {
+  list-style: none; /* Remove marcadores padrão */
+  padding: 0;
+}
+
+/* Ícone decorativo nas listas */
+.ficha-tecnica li::before, .habilidades li::before {
+  content: "🔥 "; /* Emoji de fogo */
+  color: #ff4500;
+}
+
+/* Container geral de largura máxima */
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* === Galeria de imagens === */
+.galeria {
+  display: grid; /* Layout em grade responsiva */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  padding: 1.5rem;
+  background: rgba(50, 0, 0, 0.6);
+  border: 1px solid #ff4500;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #ff450088;
+}
+
+.galeria h2 {
+  grid-column: 1 / -1; /* O título ocupa toda a linha */
+  color: #ff7e00;
+  text-shadow: 0 0 8px #ff4500;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.galeria img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 12px #ff7e00aa;
+  cursor: pointer; /* Ícone de zoom ao passar o mouse */
+}
+
+.galeria img:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 0 18px #ff7e00dd;
+}
+
+/* Botão de voltar com estilo animado */
+.btn-voltar {
+  display: inline-block;
+  margin: 2rem auto;
+  padding: 0.7rem 1.5rem;
+  background-color: #ff4500;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #ff4500aa;
+  transition: background 0.3s; /* Suaviza mudança de cor */
+}
+
+.btn-voltar:hover {
+  background-color: #ff2200;
+}
+
+/* === Cartão flip interativo === */
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 150px;
+  perspective: 1000px; /* Define a perspectiva 3D */
+  margin: 1rem auto;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d; /* Mantém elementos 3D */
+  cursor: pointer;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg); /* Efeito de virar */
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Esconde o verso quando não está virado */
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(255,126,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: #222;
+  padding: 1rem;
+}
+
+.flip-card-back {
+  background: #ff7e00;
+  color: #222;
+  transform: rotateY(180deg); /* Verso do cartão */
+}
+
+/* === Animação visual de narração === */
+.fogo-ativo {
+  animation: fogoGlow 1s infinite alternate ease-in-out; /* Brilho pulsante */
+  text-shadow: 0 0 20px #ff3c00, 0 0 40px #ff4500;
+}
+
+@keyframes fogoGlow {
+  from {
+    text-shadow: 0 0 10px #ff3c00, 0 0 20px #ff4500;
+  }
+  to {
+    text-shadow: 0 0 30px #ffa500, 0 0 60px #ff7e00;
+  }
+}
+
+/* Botão animado durante a narração */
+#btn-narrar.animando {
+  animation: pulseBotao 0.8s infinite;
+  box-shadow: 0 0 15px #ff4500cc;
+  background: #ff7e00;
+  color: white;
+}
+
+@keyframes pulseBotao {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px #ff4500cc;
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ff4500ee;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px #ff4500cc;
+  }
+}
+
+/* Efeito de tremor no corpo da página */
+body.tremor {
+  animation: shake 0.5s ease-in-out infinite; /* Tremor contínuo */
+}
+
+@keyframes shake {
+  0% { transform: translate(0px, 0px); }
+  25% { transform: translate(1px, -1px); }
+  50% { transform: translate(-1px, 1px); }
+  75% { transform: translate(1px, 1px); }
+  100% { transform: translate(-1px, -1px); }
+}
+
+/* === Efeitos de partículas de fogo === */
+.fogo-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Não interfere nos cliques */
+  overflow: hidden;
+  z-index: 0;
+}
+
+.fogo-particles span {
+  position: absolute;
+  bottom: -50px;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, orange, red, transparent);
+  border-radius: 50%;
+  animation: subir 5s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes subir {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* === Lightbox (imagem ampliada) === */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: zoom-out;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.hidden {
+  opacity: 0;
+  pointer-events: none; /* Esconde o lightbox sem remover do DOM */
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 0 30px #ff7e00cc;
+  cursor: zoom-out;
+  user-select: none;
+}
+
+.lightbox .close {
+  position: fixed;
+  top: 1rem;
+  right: 1.5rem;
+  color: #ff7e00;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  text-shadow: 0 0 10px #ff4500;
+  z-index: 1100;
+  transition: color 0.3s ease;
+}
+
+.lightbox .close:hover {
+  color: #ff2200;
+}
+
+/* === Responsividade: desativa tremor no mobile === */
+@media (max-width: 600px) {
+  body.tremor {
+    animation: none;
+  }
+}
+
+/* === Estilos personalizados das habilidades === */
+
+/* Container em grid para cards de habilidades */
+.habilidades-lista {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card base com visual flamejante */
+.habilidade-card {
+  position: relative;
+  background: rgba(255, 70, 0, 0.15);
+  border: 2px solid #ff4500;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 12px #ff7e00aa;
+  transition: transform 0.3s ease;
+  text-align: center;
+  overflow: hidden; /* Garante que nada ultrapasse */
+  height: auto;
+}
+
+.habilidade-card img {
+  display: block;
+  margin: 0 auto;             /* Centraliza horizontalmente */
+  max-width: 100%;            /* Nunca ultrapassa a largura do card */
+  height: 180px;              /* Altura padronizada */
+  object-fit: cover;          /* Corta o excesso mantendo proporção */
+  border-radius: 8px;
+  box-shadow: 0 0 12px #ff7e00aa;
+}
+
+
+
+.habilidade-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px #ff7e00cc;
+}
+
+/* Estilo especial: Chama Relâmpago */
+.chama-raio {
+  background: linear-gradient(135deg, #222, #333);
+  border: 2px solid #ffd700;
+  animation: fundoEletrico 2s infinite alternate;
+}
+
+.chama-raio::before {
+  content: '';
+  position: relative;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, #fff70033 0%, transparent 70%);
+  animation: faíscas 1.5s infinite ease-in-out;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.chama-raio h3, .chama-raio p, .chama-raio img {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes fundoEletrico {
+  0% {
+    background-color: #333;
+    box-shadow: 0 0 10px #ffff33;
+  }
+  100% {
+    background-color: #222;
+    box-shadow: 0 0 25px #ffaa00, 0 0 35px #ffff00;
+  }
+}
+
+@keyframes faíscas {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(10px, -10px) scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-10px, 10px) scale(1);
+    opacity: 0.3;
+  }
+}
+
+/* Estilo especial: Modo Rei Dragão do Fogo */
+.modo-rei {
+  background: radial-gradient(circle at center, #ff6600 0%, #330000 100%);
+  border: 2px solid #ffa500;
+  animation: reiFlare 3s infinite alternate;
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+  
+}
+
+.modo-rei::before {
+  content: '';
+  position: relative;
+  top: -50%;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 140, 0, 0.3) 0%, transparent 70%);
+  animation: flareMove 5s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes reiFlare {
+  0% {
+    box-shadow: 0 0 10px #ff9900;
+  }
+  100% {
+    box-shadow: 0 0 30px #ffcc00;
+  }
+}
+
+@keyframes flareMove {
+  0% { transform: translate(0, 0); opacity: 0.3; }
+  100% { transform: translate(20px, -20px); opacity: 0.6; }
+}
+
+/* Estilo especial: Combate Corpo-a-Corpo Flamejante */
+.corpo-flamejante {
+  background: linear-gradient(135deg, #220000, #440000);
+  border: 2px solid #ff3300;
+  animation: impactoGlow 2s infinite;
+}
+
+.corpo-flamejante::before {
+  content: '';
+  position: relative;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-radial-gradient(circle, rgba(255, 69, 0, 0.1) 2px, transparent 5px);
+  animation: pulsar 1s infinite ease-in-out;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes impactoGlow {
+  0% { box-shadow: 0 0 5px #ff3300; }
+  100% { box-shadow: 0 0 20px #ff2200; }
+}
+
+@keyframes pulsar {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+/* Estilo especial: Rugido do Dragão de Fogo */
+.rugido-fogo {
+  background: linear-gradient(145deg, #330000, #1a0000);
+  border: 2px solid #ff5500;
+  box-shadow: 0 0 20px #ff440080;
+  animation: rugidoBrilho 2.5s infinite alternate;
+}
+
+.rugido-fogo::before {
+  content: '';
+  position: relative;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 100, 0, 0.3), transparent 70%);
+  animation: rugidoEspiral 6s linear infinite;  /* ← Correto */
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes rugidoEspiral {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: rotate(360deg) scale(1.2);
+    opacity: 0.1;
+  }
+}
+

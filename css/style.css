@@ -474,3 +474,87 @@ footer.show {
 }
 
 
+.search-box {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+#searchInput {
+  padding: 0.6rem 1rem;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  border: 1px solid #ff7e00;
+  background-color: #1a1a1a;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+#searchInput:focus {
+  box-shadow: 0 0 10px #ff7e00cc;
+}
+
+#sem-resultados {
+  font-size: 1.3rem;
+  color: #aaa;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.personagem-page {
+  max-width: 900px;
+  margin: 80px auto 50px;
+  padding: 0 1rem;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ficha-tecnica {
+  text-align: center;
+}
+
+.personagem-img {
+  width: 250px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 15px #ff6b00cc;
+}
+
+.ficha-tecnica ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
+}
+
+.ficha-tecnica li {
+  margin: 0.5rem 0;
+}
+
+.biografia, .habilidades, .galeria {
+  margin-top: 2.5rem;
+}
+
+.galeria-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.galeria-container img {
+  width: 150px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px #ff6b00aa;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.galeria-container img:hover {
+  transform: scale(1.1);
+}
+
+.habilidades ul {
+  list-style: disc inside;
+  font-size: 1.1rem;
+}
