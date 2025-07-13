@@ -3,64 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Um blog dedicado ao universo de Fairy Tail, com curiosidades, personagens e muito mais.">
-  <meta name="author" content="Edson alencar">
+  <meta name="description" content="Um blog dedicado ao universo de Fairy Tail, com curiosidades, personagens e muito mais." />
+  <meta name="author" content="Edson Alencar" />
+  <title>Fairy Tail Blog</title>
 
+  <!-- BASE DINÂMICA: Ajusta caminho base conforme ambiente (local ou GitHub Pages) -->
+  <script>
+    const isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
+    const base = isLocal ? "/" : "/Fairy-Tail-Blog/";
+    document.write(`<base href="${base}">`);
+  </script>
 
-  <title>Fairy Tail Blog - Carrossel 3D</title>
-<link rel="stylesheet" href="/Fairy-Tail-Blog/css/style.css" />
+  <!-- Estilo principal do site -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
+  <!-- ========== HEADER / MENU ========== -->
   <header>
-  <nav class="navbar">
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <ul class="nav-links" id="nav-links">
-      <li class="has-submenu">
-        <a href="index.html">Home</a>
-        <ul class="submenu">
-          <li><a href="#">Design</a></li>
-          <li><a href="#">Desenvolvimento</a></li>
-          <li><a href="#">Consultoria</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Sobre</a></li>
-      <li><a href="#">Contato</a></li>
-    </ul>
-  </nav>
-</header>
+    <nav class="navbar">
+      <!-- Botão hambúrguer para menu responsivo -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
+      <!-- Links de navegação com submenu -->
+      <ul class="nav-links" id="nav-links">
+        <li class="has-submenu">
+          <a href="index.html">Home</a>
+          <ul class="submenu">
+            <li><a href="#">Design</a></li>
+            <li><a href="#">Desenvolvimento</a></li>
+            <li><a href="#">Consultoria</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <!-- ========== CONTEÚDO PRINCIPAL ========== -->
   <main>
+    <!-- Seção de destaque com carrossel -->
     <section class="hero">
       <div class="carousel-container">
         <div class="carousel-wrapper">
           <div class="carousel-item active">
-            <img src="../../assets/img/726628.png" alt="Slide 1" />
+            <img src="assets/img/726628.png" alt="Slide 1" />
             <p>Bem-vindo ao meu blog sobre Fairy Tail!</p>
           </div>
           <div class="carousel-item">
-            <img src="../../assets/img/823931.png" alt="Slide 2" />
+            <img src="assets/img/823931.png" alt="Slide 2" />
             <p>Descubra os personagens incríveis da série.</p>
           </div>
           <div class="carousel-item">
-            <img src="../../assets/img/823932.png" alt="Slide 3" />
+            <img src="assets/img/823932.png" alt="Slide 3" />
             <p>Curiosidades e fatos interessantes sobre Fairy Tail.</p>
           </div>
           <div class="carousel-item">
-            <img src="../../assets/img/829275.png" alt="Slide 4" />
+            <img src="assets/img/829275.png" alt="Slide 4" />
             <p>Entre em contato e compartilhe suas opiniões!</p>
           </div>
         </div>
 
+        <!-- Botões do carrossel -->
         <div class="carousel-buttons">
           <button class="carousel-button prev" aria-label="Anterior">⟨</button>
           <button class="carousel-button next" aria-label="Próximo">⟩</button>
         </div>
 
+        <!-- Indicadores do carrossel -->
         <div class="carousel-indicators">
           <button class="indicator" data-slide="0"></button>
           <button class="indicator" data-slide="1"></button>
@@ -70,56 +85,69 @@
       </div>
     </section>
 
+    <!-- Mensagem de boas-vindas -->
     <section class="welcome">
       <h1>Bem-vindo ao meu blog!</h1>
       <p>Este é um exemplo de site. Explore as seções acima.</p>
     </section>
 
+    <!-- Seção com lista de personagens e filtros -->
     <section class="episodios" id="personagens">
-  <h2>Personagens de Fairy Tail</h2>
-  <div class="filtro-categorias">
-  <button class="filtro-btn ativo" data-filtro="todos">Todos</button>
-  <button class="filtro-btn" data-filtro="mago">Magos</button>
-  <button class="filtro-btn" data-filtro="dragao">Dragon Slayers</button>
-  <button class="filtro-btn" data-filtro="guilda">Guilda Fairy Tail</button>
-</div>
-  
-   <div class="search-box">
-  <input type="text" id="searchInput" placeholder="Buscar personagem..." />
-  </div>
+      <h2>Personagens de Fairy Tail</h2>
 
-  <div id="episode-list" class="grid"></div>
-  <div class="pagination">
-    <button id="prevBtn" disabled>« Anterior</button>
-    <div id="pageNumbers"></div>
-    <button id="nextBtn">Próximo »</button>
-  </div>
-  <div id="sem-resultados" style="display: none; text-align: center; margin-top: 2rem; font-size: 1.2rem; color: #ccc;">
-  Nenhum personagem encontrado.
-  </div>
+      <!-- Filtros por categoria -->
+      <div class="filtro-categorias">
+        <button class="filtro-btn ativo" data-filtro="todos">Todos</button>
+        <button class="filtro-btn" data-filtro="mago">Magos</button>
+        <button class="filtro-btn" data-filtro="dragao">Dragon Slayers</button>
+        <button class="filtro-btn" data-filtro="guilda">Guilda Fairy Tail</button>
+      </div>
 
-</section>
+      <!-- Campo de busca -->
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Buscar personagem..." />
+      </div>
 
+      <!-- Lista dinâmica de personagens -->
+      <div id="episode-list" class="grid"></div>
+
+      <!-- Paginação -->
+      <div class="pagination">
+        <button id="prevBtn" disabled>« Anterior</button>
+        <div id="pageNumbers"></div>
+        <button id="nextBtn">Próximo »</button>
+      </div>
+
+      <!-- Mensagem para nenhum resultado -->
+      <div id="sem-resultados" style="display: none; text-align: center; margin-top: 2rem; font-size: 1.2rem; color: #ccc;">
+        Nenhum personagem encontrado.
+      </div>
+    </section>
   </main>
 
+  <!-- ========== RODAPÉ ========== -->
   <footer>
     <p>&copy; 2024 Edson. Todos os direitos reservados.</p>
   </footer>
 
- <script type="module">
-  import { iniciarPersonagens } from './js/personagens.js';
-  iniciarPersonagens();
-</script>
-<script type="module">
-  import { iniciarCarrossel } from './js/carousel.js';
-  iniciarCarrossel();
-</script>
-<script type="module">
-  import { iniciarMenu } from './js/menu.js';
-  iniciarMenu();
-</script>
+  <!-- ========== SCRIPTS ========== -->
 
+  <!-- Módulo de personagens -->
+  <script type="module">
+    import { iniciarPersonagens } from './js/personagens.js';
+    iniciarPersonagens();
+  </script>
 
+  <!-- Módulo de carrossel -->
+  <script type="module">
+    import { iniciarCarrossel } from './js/carousel.js';
+    iniciarCarrossel();
+  </script>
 
+  <!-- Módulo de menu responsivo -->
+  <script type="module">
+    import { iniciarMenu } from './js/menu.js';
+    iniciarMenu();
+  </script>
 </body>
 </html>
