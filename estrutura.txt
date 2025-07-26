@@ -1,0 +1,86 @@
+Listagem de caminhos de pasta
+O número de série do volume é 60FF-05BF
+C:.
+¦   estrutura.txt
+¦   index.html
+¦   LICENSE.txt
+¦   
++---.vscode
+¦       settings.json
+¦       
++---assets
+¦   +---audio
+¦   ¦   +---gray
+¦   ¦   ¦       cold-wind-sound-effect-127448.mp3
+¦   ¦   ¦       
+¦   ¦   +---natsu
+¦   ¦           fire crackling.wav
+¦   ¦           flame burst.wav
+¦   ¦           natsu-narracao.mp3
+¦   ¦           natsu-narracao.v01.wav
+¦   ¦           
+¦   +---cursors
+¦   ¦       ice-cursor.png
+¦   ¦       
+¦   +---fontes
+¦   +---icones
+¦   +---img
+¦       ¦   726628.png
+¦       ¦   823931.png
+¦       ¦   823932.png
+¦       ¦   829275.png
+¦       ¦   mashima-what-is-your-favorite-logo-done-by-mashima-out-of-v0-ss1hfzkafhyc1.webp
+¦       ¦   
+¦       +---GIFs
+¦       ¦       Fire Dragon Lightning Mode.gif
+¦       ¦       Fire Dragon's Iron Fist.webp
+¦       ¦       Karyu no Hoko.gif
+¦       ¦       Modo Rei Dragão do Fogo.gif
+¦       ¦       
+¦       +---gray
+¦       ¦       Gray-Fullbuster Determinado-simple_compose_01.png
+¦       ¦       Gray-Fullbuster Determinado-simple_compose_02.png
+¦       ¦       Gray-Fullbuster-no-Gelo.png
+¦       ¦       Gray-Invocando-Gelo.png
+¦       ¦       Mestre-do-Gelo.png
+¦       ¦       
+¦       +---natsu
+¦               guilda-fairy-tail.png
+¦               natsu-bg.png
+¦               natsu-gray.png
+¦               natsu-happy.png
+¦               Natsu-Iron-Dragon-Fire.png
+¦               natsu-perfil.png
+¦               natsu-rei-dragao.png
+¦               
++---css
+¦       gray.css
+¦       natsu.css
+¦       style.css
+¦       
++---js
+¦   ¦   carousel.js
+¦   ¦   gray.js
+¦   ¦   index.js
+¦   ¦   main.js
+¦   ¦   menu.js
+¦   ¦   natsu.js
+¦   ¦   personagens.js
+¦   ¦   
+¦   +---components
+¦   ¦       lightbox.js
+¦   ¦       
+¦   +---data
+¦           personagensData.js
+¦           
++---pages
+¦   +---personagens
+¦           erza.html
+¦           gray.html
+¦           lucy.html
+¦           natsu.html
+¦           zeref.html
+¦           
++---reports
+        relatorio-problema-cards-natsu.txt
+        
