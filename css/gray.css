@@ -4,7 +4,9 @@ body {
   font-family: 'Orbitron', sans-serif;
   background: linear-gradient(to bottom, #0f1a2b, #000814); /* Fundo gélido escuro */
   color: #e0f7ff; /* Azul-claro gelado */
-  cursor: url('/assets/cursors/ice-cursor.png'), auto;
+  cursor: url('/Fairy-Tail-Blog/assets/cursors/ice-cursor.png'), auto;
+
+
 }
 
 /* Fundo de gelo fixo decorativo */
@@ -15,7 +17,8 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/assets/img/gray/Gray-Fullbuster Determinado-simple_compose_02.png');
+  background-image: url('/Fairy-Tail-Blog/assets/img/gray/Gray-Fullbuster-Determinado-simple_compose_02.png');
+
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -266,7 +269,9 @@ h1, h2 {
 
 /* Cursor personalizado para toda a página */
 body, .galeria img, .lightbox {
-  cursor: url('../../assets/cursors/ice-cursor.png'), auto;
+  cursor: url('/Fairy-Tail-Blog/assets/cursors/ice-cursor.png'), auto;
+
+
 }
 
 /* Para fallback e usabilidade, pode usar cursor padrão em mobile */

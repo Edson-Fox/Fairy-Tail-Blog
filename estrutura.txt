@@ -1,86 +1,89 @@
 Listagem de caminhos de pasta
-O número de série do volume é 60FF-05BF
+O nÃºmero de sÃ©rie do volume Ã© 60FF-05BF
 C:.
-¦   estrutura.txt
-¦   index.html
-¦   LICENSE.txt
-¦   
+Â¦   estrutura.txt
+Â¦   index.html
+Â¦   LICENSE.txt
+Â¦   
 +---.vscode
+ Lucy-Heartfilia
+
 +---assets
-¦   +---audio
-¦   ¦   +---gray
-¦   ¦   ¦       cold-wind-sound-effect-127448.mp3
-¦   ¦   ¦       
-¦   ¦   +---natsu
-¦   ¦           fire crackling.wav
-¦   ¦           flame burst.wav
-¦   ¦           natsu-narracao.mp3
-¦   ¦           natsu-narracao.v01.wav
-¦   ¦           
-¦   +---cursors
-¦   ¦       ice-cursor.png
-¦   ¦       
-¦   +---fontes
-¦   +---icones
-¦   +---img
-¦       ¦   726628.png
-¦       ¦   823931.png
-¦       ¦   823932.png
-¦       ¦   829275.png
-¦       ¦   mashima-what-is-your-favorite-logo-done-by-mashima-out-of-v0-ss1hfzkafhyc1.webp
-¦       ¦   
-¦       +---GIFs
-¦       ¦       Fire Dragon Lightning Mode.gif
-¦       ¦       Fire Dragon's Iron Fist.webp
-¦       ¦       Karyu no Hoko.gif
-¦       ¦       Modo Rei Dragão do Fogo.gif
-¦       ¦       
-¦       +---gray
-¦       ¦       Gray-Fullbuster Determinado-simple_compose_01.png
-¦       ¦       Gray-Fullbuster Determinado-simple_compose_02.png
-¦       ¦       Gray-Fullbuster-no-Gelo.png
-¦       ¦       Gray-Invocando-Gelo.png
-¦       ¦       Mestre-do-Gelo.png
-¦       ¦       
-¦       +---natsu
-¦               guilda-fairy-tail.png
-¦               natsu-bg.png
-¦               natsu-gray.png
-¦               natsu-happy.png
-¦               Natsu-Iron-Dragon-Fire.png
-¦               natsu-perfil.png
-¦               natsu-rei-dragao.png
-¦               
+Â¦   +---audio
+Â¦   Â¦   +---gray
+Â¦   Â¦   Â¦       cold-wind-sound-effect-127448.mp3
+Â¦   Â¦   Â¦       
+Â¦   Â¦   +---natsu
+Â¦   Â¦           fire crackling.wav
+Â¦   Â¦           flame burst.wav
+Â¦   Â¦           natsu-narracao.mp3
+Â¦   Â¦           natsu-narracao.v01.wav
+Â¦   Â¦           
+Â¦   +---cursors
+Â¦   Â¦       ice-cursor.png
+Â¦   Â¦       
+Â¦   +---fontes
+Â¦   +---icones
+Â¦   +---img
+Â¦       Â¦   726628.png
+Â¦       Â¦   823931.png
+Â¦       Â¦   823932.png
+Â¦       Â¦   829275.png
+Â¦       Â¦   mashima-what-is-your-favorite-logo-done-by-mashima-out-of-v0-ss1hfzkafhyc1.webp
+Â¦       Â¦   
+Â¦       +---GIFs
+Â¦       Â¦       Fire Dragon Lightning Mode.gif
+Â¦       Â¦       Fire Dragon's Iron Fist.webp
+Â¦       Â¦       Karyu no Hoko.gif
+Â¦       Â¦       Modo Rei DragÃ£o do Fogo.gif
+Â¦       Â¦       
+Â¦       +---gray
+Â¦       Â¦       Gray-Fullbuster Determinado-simple_compose_01.png
+Â¦       Â¦       Gray-Fullbuster Determinado-simple_compose_02.png
+Â¦       Â¦       Gray-Fullbuster-no-Gelo.png
+Â¦       Â¦       Gray-Invocando-Gelo.png
+Â¦       Â¦       Mestre-do-Gelo.png
+Â¦       Â¦       
+Â¦       +---natsu
+Â¦               guilda-fairy-tail.png
+Â¦               natsu-bg.png
+Â¦               natsu-gray.png
+Â¦               natsu-happy.png
+Â¦               Natsu-Iron-Dragon-Fire.png
+Â¦               natsu-perfil.png
+Â¦               natsu-rei-dragao.png
+Â¦               
 +---css
-¦       gray.css
-¦       lucy.css
-¦       natsu.css
-¦       style.css
-¦       
+Â¦       gray.css
+ Lucy-Heartfilia
+Â¦       lucy.css
+
 +---js
-¦   ¦   carousel.js
-¦   ¦   gray.js
-¦   ¦   index.js
-¦   ¦   lucy.js
-¦   ¦   main.js
-¦   ¦   menu.js
-¦   ¦   natsu.js
-¦   ¦   personagens.js
-¦   ¦   
-¦   +---components
-¦   ¦       lightbox.js
-¦   ¦       
-¦   +---data
-¦           personagensData.js
-¦           
+Â¦   Â¦   carousel.js
+Â¦   Â¦   gray.js
+Â¦   Â¦   index.js
+  Lucy-Heartfilia
+Â¦   Â¦   lucy.js
+
+Â¦   Â¦   main.js
+Â¦   Â¦   menu.js
+Â¦   Â¦   natsu.js
+Â¦   Â¦   personagens.js
+Â¦   Â¦   
+Â¦   +---components
+Â¦   Â¦       lightbox.js
+Â¦   Â¦       
+Â¦   +---data
+Â¦           personagensData.js
+Â¦           
 +---pages
-¦   +---personagens
-¦           erza.html
-¦           gray.html
-¦           lucy.html
-¦           natsu.html
-¦           zeref.html
-¦           
+Â¦   +---personagens
+Â¦           erza.html
+Â¦           gray.html
+Â¦           lucy.html
+Â¦           natsu.html
+Â¦           zeref.html
+Â¦           
 +---reports
         relatorio-problema-cards-natsu.txt
         
