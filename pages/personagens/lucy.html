@@ -1,32 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lucy Heartfilia - Perfil</title>
-  <link rel="stylesheet" href="../../css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página dedicada a Lucy Heartfilia, a maga celestial da Fairy Tail.">
+    <title>Lucy Heartfilia - Fairy Tail</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Estilo personalizado -->
+    <link rel="stylesheet" href="/css/lucy.css">
+
+    <!-- Fonte especial para Lucy -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <header>
-    <nav class="navbar">
-      <a href="../../index.html" class="logo">← Voltar para Início</a>
-    </nav>
-  </header>
+<body class="lucy-theme">
 
-  <main class="personagem-perfil">
-    <div class="perfil-container">
-      <img src="../../assets/img/lucy.png" alt="Lucy Heartfilia" class="perfil-img" />
-      <div class="perfil-info">
-        <h1>Lucy Heartfilia</h1>
-        <p><strong>Categoria:</strong> Maga Celestial</p>
-        <p><strong>Guilda:</strong> Fairy Tail</p>
-        <p><strong>Descrição:</strong> Lucy é uma maga especializada em magias celestiais. Amiga leal e inteligente, ela busca fortalecer sua guilda e seus amigos.</p>
-      </div>
-    </div>
-  </main>
+    <!-- Header / Menu -->
+    <header class="bg-light shadow-sm py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="site-title">Fairy Tail Blog</h1>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="natsu.html">Natsu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gray.html">Gray</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="lucy.html">Lucy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <footer>
-    <p>&copy; 2024 Edson. Todos os direitos reservados.</p>
-  </footer>
+    <!-- Hero Section -->
+    <section class="hero-lucy text-center text-white d-flex align-items-center justify-content-center">
+        <div class="hero-content">
+            <h2 class="display-4">Lucy Heartfilia</h2>
+            <p class="lead">“As chaves que abrem o caminho para o futuro estão nas minhas mãos!”</p>
+        </div>
+    </section>
+
+    <!-- Ficha técnica -->
+    <section class="container my-5">
+        <h3 class="mb-4">Ficha Técnica</h3>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Nome:</strong> Lucy Heartfilia</li>
+            <li class="list-group-item"><strong>Magia:</strong> Magia Celestial</li>
+            <li class="list-group-item"><strong>Guilda:</strong> Fairy Tail</li>
+            <li class="list-group-item"><strong>Primeira aparição:</strong> Episódio 1</li>
+        </ul>
+    </section>
+
+    <!-- Chaves Celestiais -->
+    <section class="container my-5">
+        <h3 class="mb-4">Chaves Celestiais</h3>
+        <div class="row g-4">
+            <!-- Exemplo de card -->
+            <div class="col-md-4">
+                <div class="card card-lucy h-100 text-center">
+                    <img src="assets/img/lucy/aquarius.jpg" class="card-img-top" alt="Aquarius">
+                    <div class="card-body">
+                        <h5 class="card-title">Aquarius</h5>
+                        <p class="card-text">Espírito Celestial do signo de Aquário.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Mais cards serão adicionados -->
+        </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="container my-5">
+        <h3 class="mb-4">Curiosidades</h3>
+        <p>Lucy é conhecida por seu carisma, determinação e habilidade única de se conectar com seus Espíritos Celestiais.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p class="mb-0">&copy; 2025 Fairy Tail Blog</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="/js/lucy.js"></script>
 </body>
 </html>

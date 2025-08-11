@@ -1,0 +1,156 @@
+/* =========================================================
+   Lucy Heartfilia - Estilo Futurista e Celestial
+   Autor: Edson Alencar
+   Descrição: CSS para a página da Lucy Heartfilia com tema
+   inspirado em magia celestial, elegância e tons dourados.
+   ========================================================= */
+
+/* ------------------------------
+   1. Importação de Fontes
+--------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;700&display=swap');
+
+/* ------------------------------
+   2. Variáveis de Cores
+--------------------------------*/
+:root {
+  --lucy-gold: #FFD700;
+  --lucy-white: #FFFFFF;
+  --lucy-blue: #ADD8E6;
+  --lucy-dark: #1a1a1a;
+}
+
+/* ------------------------------
+   3. Reset Básico
+--------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--lucy-dark);
+  color: var(--lucy-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ------------------------------
+   4. Cabeçalho
+--------------------------------*/
+header {
+  background: linear-gradient(90deg, var(--lucy-gold), var(--lucy-blue));
+  padding: 20px;
+  text-align: center;
+  color: var(--lucy-dark);
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  text-shadow: 0 0 5px var(--lucy-white);
+}
+
+/* ------------------------------
+   5. Seção de Apresentação
+--------------------------------*/
+.hero {
+  background: radial-gradient(circle at top, var(--lucy-blue), var(--lucy-dark));
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--lucy-gold);
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 20px auto 0;
+  font-size: 1.1rem;
+  color: var(--lucy-white);
+}
+
+/* ------------------------------
+   6. Cards de Habilidades
+--------------------------------*/
+.habilidades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--lucy-gold);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px var(--lucy-gold);
+}
+
+.card h3 {
+  color: var(--lucy-gold);
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--lucy-white);
+}
+
+/* ------------------------------
+   7. Botões
+--------------------------------*/
+.btn {
+  display: inline-block;
+  background: var(--lucy-gold);
+  color: var(--lucy-dark);
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--lucy-blue);
+  color: var(--lucy-dark);
+  box-shadow: 0 0 15px var(--lucy-blue);
+}
+
+/* ------------------------------
+   8. Rodapé
+--------------------------------*/
+footer {
+  background: var(--lucy-dark);
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--lucy-gold);
+}
+
+/* ------------------------------
+   9. Efeitos Especiais (Estrelas)
+--------------------------------*/
+@keyframes piscar {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.estrela {
+  position: absolute;
+  background: var(--lucy-gold);
+  border-radius: 50%;
+  animation: piscar 2s infinite;
+}
